@@ -1,0 +1,3 @@
+# Project exclude paths
+/jwt/target/
+/shiro/target/

@@ -1,0 +1,4 @@
+jwt:
+  config:
+    key: mobei
+    ttl: 3600000
