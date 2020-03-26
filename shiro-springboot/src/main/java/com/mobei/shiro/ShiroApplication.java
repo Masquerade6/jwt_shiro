@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
 
 @SpringBootApplication(scanBasePackages = "com.mobei")
-@EntityScan("cn.itcast.shiro.domain")
+@EntityScan("com.mobei.shiro.domain")
 public class ShiroApplication {
 
 

@@ -17,10 +17,16 @@ import org.springframework.context.annotation.Configuration;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * @author mobei
+ */
 @Configuration
 public class ShiroConfiguration {
 
-    //1.创建realm
+    /**
+     * 1.创建realm
+     * @return
+     */
     @Bean
     public CustomRealm getRealm() {
         return new CustomRealm();
@@ -52,8 +58,10 @@ public class ShiroConfiguration {
         //2.设置安全管理器
         filterFactory.setSecurityManager(securityManager);
         //3.通用配置（跳转登录页面，为授权跳转的页面）
-        filterFactory.setLoginUrl("/autherror?code=1");//跳转url地址
-        filterFactory.setUnauthorizedUrl("/autherror?code=2");//未授权的url
+        //跳转url地址
+        filterFactory.setLoginUrl("/autherror?code=1");
+        //未授权的url
+        filterFactory.setUnauthorizedUrl("/autherror?code=2");
         //4.设置过滤器集合
 
         /**
@@ -122,7 +130,7 @@ public class ShiroConfiguration {
         return redisCacheManager;
     }
 
-    //开启对shior注解的支持
+    //开启对shiro注解的支持
     @Bean
     public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(SecurityManager securityManager) {
         AuthorizationAttributeSourceAdvisor advisor = new AuthorizationAttributeSourceAdvisor();
